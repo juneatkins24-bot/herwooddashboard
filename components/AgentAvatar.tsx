@@ -6,7 +6,6 @@ const INITIALS: Record<string, string> = {
   shane: "SM",
   alice: "AP",
   dana: "DF",
-  jenny: "JS",
   kit: "KP",
 };
 
@@ -16,12 +15,12 @@ export default function AgentAvatar({ slug }: { slug: string }) {
 
   return (
     <div className="flex items-center gap-3">
-      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ink font-serif text-sm text-paper">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-baby font-display text-sm text-night">
         {INITIALS[slug] ?? slug.slice(0, 2).toUpperCase()}
       </div>
       <div className="leading-tight">
-        <div className="font-serif text-base text-ink">{agent.name}</div>
-        <div className="text-xs uppercase tracking-[0.15em] text-muted">
+        <div className="font-display text-base text-night">{agent.name}</div>
+        <div className="text-xs uppercase tracking-[0.15em] text-night/60">
           {agent.title}
         </div>
       </div>

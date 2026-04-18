@@ -14,13 +14,13 @@ export default async function HomePage({
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
       <header className="mb-10">
-        <p className="text-xs uppercase tracking-[0.2em] text-muted">
+        <p className="text-xs uppercase tracking-[0.2em] text-night/60">
           Herwood Creative
         </p>
-        <h1 className="mt-2 font-serif text-4xl text-ink">
+        <h1 className="mt-2 font-display text-4xl text-night">
           The Writers' Room
         </h1>
-        <p className="mt-2 text-sm text-muted">
+        <p className="mt-2 text-sm text-night/60">
           Daily standup — {date}
         </p>
       </header>

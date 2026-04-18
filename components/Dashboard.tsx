@@ -31,7 +31,7 @@ export default function Dashboard({
 
   return (
     <div>
-      <nav className="mb-8 flex flex-wrap gap-2 border-b border-ink/10 pb-4 text-xs uppercase tracking-[0.15em]">
+      <nav className="mb-8 flex flex-wrap gap-2 border-b border-night/10 pb-4 text-xs uppercase tracking-[0.15em]">
         <FilterLink
           label="All"
           href={filterHref(activeDate, "all")}
@@ -49,7 +49,7 @@ export default function Dashboard({
 
       <div className="space-y-6">
         {ordered.length === 0 && (
-          <div className="rounded-lg border border-dashed border-ink/20 p-8 text-center text-sm text-muted">
+          <div className="rounded-lg border border-dashed border-night/20 p-8 text-center text-sm text-night/60">
             No entries for {activeDate} yet. The cron runs at 7am Central.
           </div>
         )}
@@ -75,8 +75,8 @@ function FilterLink({
       href={href}
       className={`rounded-full border px-3 py-1 transition ${
         active
-          ? "border-ink bg-ink text-paper"
-          : "border-ink/20 text-muted hover:border-ink/40"
+          ? "border-baby bg-baby text-night"
+          : "border-night/20 text-night/60 hover:border-night/40 hover:bg-pale"
       }`}
     >
       {label}

@@ -27,7 +27,7 @@ components/
   AgentAvatar.tsx
   Dashboard.tsx
 lib/
-  agents/{bette,tina,shane,alice,dana,jenny,kit}.ts   system prompts
+  agents/{bette,tina,shane,alice,dana,kit}.ts         system prompts (Jenny benched)
   agents/index.ts                                      barrel + AGENT_ORDER
   anthropic.ts                                         client + stubbed runAgent
   context.ts                                           Herwood context block

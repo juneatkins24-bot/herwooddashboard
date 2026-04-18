@@ -4,8 +4,10 @@ import { tina } from "./tina";
 import { shane } from "./shane";
 import { alice } from "./alice";
 import { dana } from "./dana";
-import { jenny } from "./jenny";
 import { kit } from "./kit";
+
+// Jenny (Client Whisperer) is benched pending the Staff Writer rewrite.
+// Her prompt is preserved at lib/agents/jenny.ts.bench.
 
 export const AGENTS = {
   bette,
@@ -13,7 +15,6 @@ export const AGENTS = {
   shane,
   alice,
   dana,
-  jenny,
   kit,
 } satisfies Record<string, AgentConfig>;
 
@@ -25,6 +26,5 @@ export const AGENT_ORDER: AgentSlug[] = [
   "shane",
   "alice",
   "dana",
-  "jenny",
   "kit",
 ];

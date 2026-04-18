@@ -3,6 +3,8 @@ import { AGENTS } from "@/lib/agents";
 // import { runAgent } from "@/lib/anthropic";
 // import { insertEntry } from "@/lib/db";
 
+// Cron endpoint must never be cached — Vercel would hit the cache instead of running.
+export const dynamic = "force-dynamic";
 // Vercel cron hits this once a day (see vercel.json).
 // Wall time can approach ~60s with web search, so run on the Node runtime
 // and extend the max duration.

@@ -5,6 +5,15 @@ import type { AgentOutput, Entry } from "./types";
 // The schema lives in db/schema.sql — run it once against your Vercel
 // Postgres database before turning on the cron.
 
+// @vercel/postgres@0.10 types its parameters as Primitive, which excludes
+// arrays. Serialize to a Postgres array literal and cast with ::text[] in SQL.
+function toPgTextArray(values: string[]): string {
+  const escaped = values.map(
+    (v) => `"${v.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`,
+  );
+  return `{${escaped.join(",")}}`;
+}
+
 export async function getEntries({
   date,
   agent,
@@ -64,7 +73,7 @@ export async function insertEntry(
       (${agentSlug},
        ${output.headline},
        ${output.body},
-       ${output.tags as unknown as string},
+       ${toPgTextArray(output.tags)}::text[],
        ${output.urgency},
        ${JSON.stringify(output.sources)}::jsonb,
        ${output.verdict ?? null},
